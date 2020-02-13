@@ -1,9 +1,7 @@
 pipeline {
-
-	agent none {
+	agent none 
 		stages {
-
-			stage ("Build1") {
+			stage ('Build1') {
 				agent { 
 					docker {
 						image 'python:2-alpine'
@@ -12,11 +10,7 @@ pipeline {
 				steps {
 					sh 'python -m py_compile sources/add2vals.py sources/calc.py'
 					
-				
-					}
-			
+		  	}
 		}
-
 	}	
-
 }
